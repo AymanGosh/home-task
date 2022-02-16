@@ -14,8 +14,10 @@ export default function Row({ fetchUrl, setBannerPhoto }) {
     setBannerPhoto(request.data[indexOfDefaultPhoto]);
   }, [fetchUrl]);
 
-  const nextPage = () => {
-    console.log("nextPage");
+  const nextPage = async () => {
+    const request = await axios.get(fetchUrl);
+    setPhotos(request.data);
+    setBannerPhoto(request.data[indexOfDefaultPhoto]);
   };
 
   return (
