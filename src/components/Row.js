@@ -3,11 +3,13 @@ import requests from "../requests";
 import axios from "axios";
 import "./Row.css";
 
-export default function Row({ fetchUrl }) {
+export default function Row({ fetchUrl, setBannerPhoto }) {
   const [photos, setPhotos] = useState([]);
   useEffect(async () => {
     const request = await axios.get(fetchUrl);
     setPhotos(request.data);
+    let rand = Math.floor(Math.random() * 10);
+    setBannerPhoto(request.data[rand]);
   }, [fetchUrl]);
 
   return (
@@ -19,6 +21,9 @@ export default function Row({ fetchUrl }) {
             src={photo.download_url}
             alt={photo.author}
             title={photo.author}
+            onClick={() => {
+              setBannerPhoto(photo);
+            }}
           />
         </div>
       ))}
