@@ -1,5 +1,6 @@
 .banner {
-  text-align: center;
+  /* text-align: center; */
+  margin-left: 60px;
 }
 .banner_photo {
   width: 30%;

@@ -1,5 +1,5 @@
 const requests = {
-  fetchPhotos: "http://localhost:8888/photos",
+  fetchFivePhotos: "http://localhost:8888/photos",
 };
 
 export default requests;

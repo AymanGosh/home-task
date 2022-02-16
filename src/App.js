@@ -10,7 +10,10 @@ function App() {
     <div>
       <Banner bannerPhoto={bannerPhoto} />
       <hr />
-      <Row fetchUrl={requests.fetchPhotos} setBannerPhoto={setBannerPhoto} />
+      <Row
+        fetchUrl={requests.fetchFivePhotos}
+        setBannerPhoto={setBannerPhoto}
+      />
     </div>
   );
 }
